@@ -286,7 +286,7 @@ for(i = 1;i <= trial;i++)//trial回行う
 			}
 			default:
 				cout << "!!!error: un defined run function!!!" << br;
-				return 0;
+				break;
 		}
 	if(i == 1){
 		cout << "first trial!!" << br;
