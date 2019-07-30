@@ -1,5 +1,5 @@
 CC			= g++
-CFLAGS		= -std=c++11
+CFLAGS		= -std=c++11 -fopenmp
   # -std=c**0x  #ex -L/usr/local/lib .cから.oが作られる時のオプション
 OPTION 		= -Wall -std=c++11#std=c++0x
 DEST 		= ./
