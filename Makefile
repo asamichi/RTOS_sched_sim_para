@@ -175,7 +175,7 @@ eva3:;
 		@echo done
 		mv ./output/result_shaping.csv ./save/result_w.csv
 # 回数の指定
-NUM = 10
+NUM = 1000
 
 # 複数回実行用
 eva_A:;
