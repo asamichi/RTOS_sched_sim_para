@@ -217,7 +217,7 @@ eva_para:;
 		echo "CHECK_POINT = $$j"; \
 		for i in 1 2 3 4 5 6; do \
 			echo $$i;\
-			./benchmark.exe -s $$i -c ./output/result -m lock    CHECK_POINT $$j -n $(NUM)  > ./output/story$$i\_lock.log;      \
+			./benchmark.exe -s $$i -c ./output/result -m hc CHECK_POINT $$j -n $(NUM)  > ./output/story$$i\_lock.log;      \
 		done\
 		done
 		@echo "allocate result"
