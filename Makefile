@@ -213,11 +213,13 @@ NUM = 10
 # 複数回実行用
 eva_para:;
 		make e
-		@for j in 10 100; do \
+		@for j in 100; do \
 		echo "CHECK_POINT = $$j"; \
-		for i in 1 2 3 4 5 6; do \
+		for i in 1; do \
 			echo $$i;\
-			./benchmark.exe -s $$i -c ./output/result -m hc CHECK_POINT $$j -n $(NUM)  > ./output/story$$i\_lock.log;      \
+			./benchmark.exe -s $$i -c ./output/result -m normal  CHECK_POINT $$j -n $(NUM) > ./output/story$$i\_normal.log    && \
+			./benchmark.exe -s $$i -c ./output/result -m hc      CHECK_POINT $$j -n $(NUM)  > ./output/story$$i\_hc.log            && \
+			./benchmark.exe -s $$i -c ./output/result -m lock    CHECK_POINT $$j -n $(NUM)  > ./output/story$$i\_lock.log;      \
 		done\
 		done
 		@echo "allocate result"
