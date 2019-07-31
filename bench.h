@@ -531,7 +531,7 @@ public:
 		#endif
 //		#pragma omp parallel for 
 //		for(load = 1;load >= load_max - 0.01;load-=0.05){
-		#pragma omp parallel for
+		#pragma omp parallel for private(load)
 		for(i = 0;i < 16;i++){
 			load = 1;
 			for(j=0;j<i;j++){
