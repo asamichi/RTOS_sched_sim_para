@@ -208,7 +208,6 @@ eva_game:;
 		@echo done
 		cp -r ./output ./eva4
 
-NUM = 10
 
 # 複数回実行用
 eva_para:;
