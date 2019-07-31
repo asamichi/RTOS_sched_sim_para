@@ -207,3 +207,20 @@ eva_game:;
 		./benchmark.exe a 1 ./output/result
 		@echo done
 		cp -r ./output ./eva4
+
+NUM = 10
+
+# 複数回実行用
+eva_para:;
+		make e
+		@for j in 10 100; do \
+		echo "CHECK_POINT = $$j"; \
+		for i in 1 2 3 4 5 6; do \
+			echo $$i;\
+			./benchmark.exe -s $$i -c ./output/result -m lock    CHECK_POINT $$j -n $(NUM)  > ./output/story$$i\_lock.log;      \
+		done\
+		done
+		@echo "allocate result"
+		./benchmark.exe a 3 ./output/result
+		@echo done
+		cp -r ./output ./eva

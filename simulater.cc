@@ -261,7 +261,7 @@ int main(int argc, char *argv[]){
 	}
 
 
-#pragma omp parallel for
+
 for(i = 1;i <= trial;i++)//trial回行う
 	if(sim_flag){
 		list = make_list();//シナリオ再生成

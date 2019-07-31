@@ -524,17 +524,24 @@ public:
 		}
 		//cout << scenario_name << " start!!" << br;
 		//print_params();
-		double i = TASK_SIZE;
+		int i,j;
 		double load;
 		#ifdef cons
 		cout << "Start Task" << br;
 		#endif
-		for(load = 1;load >= load_max - 0.01;load-=0.05){
+//		#pragma omp parallel for 
+//		for(load = 1;load >= load_max - 0.01;load-=0.05){
+		#pragma omp parallel for
+		for(i = 0;i < 16;i++){
+			load = 1;
+			for(j=0;j<i;j++){
+				load-=0.05;
+			}
 			#ifdef cons
 			cout << chank;
 			cout << chank;
 			#endif
-			i = TASK_SIZE;
+
 			//負荷変えるときにタスク数減ったままだとまずいから再読み込み
 			//シナリオの再生成ではない
 			reload_story();
@@ -560,7 +567,7 @@ public:
 			else{
 				cout << "error:undefined method name" << br;
 				cout << "please execute with option -h" << br;
-				return ;
+			//	return ;
 			}
 
 			//fun_lock(i,load);
